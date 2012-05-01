@@ -1,0 +1,15 @@
+--- libxml2-2.7.2/configure.in~	2008-10-03 08:09:55.000000000 +0100
++++ libxml2-2.7.2/configure.in	2008-10-25 23:14:18.000000000 +0100
+@@ -751,6 +751,12 @@
+     AC_DEFINE([HAVE_DLOPEN], [], [Have dlopen based dso])
+   ])
+   ;;
++  *-*-mingw*)
++  # If I configured --with-modules then I damn well want
++  # modules and don't try to second-guess me.
++  MODULE_EXTENSION=".dll"
++  WITH_MODULES=1
++  ;;
+   *)
+   AC_CHECK_FUNC(shl_load, libxml_have_shl_load=yes, [
+     AC_CHECK_LIB(dld, shl_load, [

@@ -1,0 +1,11 @@
+--- include/libxml/xmlexports.h	2009-09-25 00:00:03.511532978 +0200
++++ include/libxml/xmlexports.h	2009-09-25 00:01:27.058533091 +0200
+@@ -115,7 +115,7 @@
+    */
+   #if !defined(LIBXML_STATIC)
+     #define XMLPUBFUN __declspec(dllexport)
+-    #define XMLPUBVAR __declspec(dllexport)
++    #define XMLPUBVAR __declspec(dllexport) extern
+   #else
+     #define XMLPUBFUN
+     #if !defined(LIBXML_STATIC)
